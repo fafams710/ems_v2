@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payroll Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #4CAF50; /* Green */
+            color: white;
+        }
+        .btn {
+            background-color: #2196F3; /* Blue */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Payroll Information for {{ employee.first_name }} {{ employee.last_name }}</h1>
+
+    <table>
+        <tr>
+            <th>Department</th>
+            <td>{{ employee.department }}</td>
+        </tr>
+        <tr>
+            <th>Role</th>
+            <td>{{ employee.role }}</td>
+        </tr>
+        <tr>
+            <th>Regular Pay</th>
+            <td>${{ regular_pay }}</td>
+        </tr>
+        <tr>
+            <th>Overtime Pay</th>
+            <td>${{ overtime_pay }}</td>
+        </tr>
+        <tr>
+            <th>Total Pay</th>
+            <td>${{ total_pay }}</td>
+        </tr>
+    </table>
+
+    <a href="{% url 'time_log' %}" class="btn">Back to Time Log</a>
+    <a href="{% url 'request_leave' %}" class="btn">Request Leave</a>
+    <a href="{% url 'leave_status' %}" class="btn">Leave Status</a>
+    <a href="{% url 'logout' %}" class="btn">Logout</a>
+</body>
+</html>

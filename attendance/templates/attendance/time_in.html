@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time In</title>
+</head>
+<body>
+    <h1>Time In</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit">Time In</button>
+    </form>
+    <a href="{% url 'time_log' %}">View Time Log</a>
+</body>
+</html>

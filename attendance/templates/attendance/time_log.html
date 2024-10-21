@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Log</title>
+    <style>
+        .btn {
+            background-color: #4CAF50; /* Green */
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 10px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .btn-info {
+            background-color: #2196F3; /* Blue */
+        }
+        .btn-leave {
+            background-color: #FF9800; /* Orange */
+        }
+        .btn-status {
+            background-color: #673AB7; /* Purple */
+        }
+    </style>
+</head>
+<body>
+    <h1>Time Log for {{ employee.first_name }} {{ employee.last_name }}</h1>
+
+    <h2>Today's Work</h2>
+    <p>Total Hours Worked Today: {{ total_hours_today }} hours</p>
+    <p>Daily Salary: ${{ daily_salary }}</p>
+
+    <h2>This Month's Work</h2>
+    <p>Total Hours Worked This Month: {{ total_hours_this_month }} hours</p>
+    <p>Monthly Salary: ${{ monthly_salary }}</p>
+
+    <a href="{% url 'time_in' %}" class="btn">Time In</a> |
+    <a href="{% url 'time_out' %}" class="btn">Time Out</a> |
+
+    <!-- New Button for Employee Information -->
+    <a href="{% url 'employee_info' %}" class="btn btn-info">View Employee Information</a> |
+
+    <!-- New Button for Request Leave -->
+    <a href="{% url 'request_leave' %}" class="btn btn-leave">Request Leave</a> |
+
+    <!-- New Button for Leave Status -->
+    <a href="{% url 'leave_status' %}" class="btn btn-status">Leave Status</a> |
+
+    <a href="{% url 'payroll_info' %}" class="btn">View Payroll Information</a>
+    <!-- Logout Button -->
+    <a href="{% url 'logout' %}" class="btn">Logout</a>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Leave</title>
+</head>
+<body>
+    <h1>Request Leave</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="leave_type">Leave Type:</label>
+        <select name="leave_type" id="leave_type" required>
+            <option value="PTO">Paid Time Off</option>
+            <option value="SICK">Sick Leave</option>
+            <option value="VACATION">Vacation</option>
+        </select>
+        <br>
+
+        <label for="start_date">Start Date:</label>
+        <input type="date" name="start_date" id="start_date" required>
+        <br>
+
+        <label for="end_date">End Date:</label>
+        <input type="date" name="end_date" id="end_date" required>
+        <br>
+
+        <label for="reason">Reason:</label>
+        <textarea name="reason" id="reason" placeholder="No reason provided"></textarea>
+        <br>
+
+        <button type="submit">Submit Leave Request</button>
+    </form>
+
+    <a href="{% url 'leave_status' %}">View Leave Status</a>
+    <a href="{% url 'logout' %}">Logout</a>
+</body>
+</html>
