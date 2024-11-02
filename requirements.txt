@@ -1,1 +1,4 @@
 Django>=4.2.16
+gunicorn>=24
+psycopg[c]; sys_platform == "linux"
+psycopg[binary]; sys_platform != "linux"
