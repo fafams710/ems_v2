@@ -1,4 +1,4 @@
-web: gunicorn ems_v2.wsgi
+web: python manage.py runserver %PORT%
 
 # Uncomment this `release` process if you are using a database, so that Django's model
 # migrations are run as part of app deployment, using Heroku's Release Phase feature:
