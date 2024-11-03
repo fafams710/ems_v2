@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
-import dj_database_url
+
 from pathlib import Path
 import os
 import dj_database_url
@@ -79,27 +79,12 @@ WSGI_APPLICATION = 'emsssss.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-
-
-
 DATABASES = {
-<<<<<<< HEAD
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dd4s2hps31o3p7',
-        'USER': 'uavikjad86dbp1',
-        'PASSWORD': 'p8f037b1005391042e29e1df01a9aca89ca26dc76a63389155cfc0f71e7b5bc88',
-        'HOST': 'c3cj4hehegopde.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',
-        'PORT': '5432',  # Default PostgreSQL port
-    }
-=======
     'default': dj_database_url.config(
         default=os.environ.get('DATABASE_URL'),
         engine='django.db.backends.postgresql')
->>>>>>> de3acd2d26527d6853313cc5be40f4e5378ec4d3
 }
 
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
