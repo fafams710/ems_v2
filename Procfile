@@ -1,4 +1,4 @@
-release: python manage.py migrate
+# release: python manage.py migrate
 web: gunicorn emsssss.wsgi
 
 # Uncomment this `release` process if you are using a database, so that Django's model
